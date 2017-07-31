@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-task" target="1.7" />
+      <module name="spring-task" target="1.8" />
       <module name="ssm" target="1.7" />
     </bytecodeTargetLevel>
   </component>
