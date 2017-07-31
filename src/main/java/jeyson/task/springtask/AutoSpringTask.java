@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by  liujishuai
  * Create Date: 2017/7/28 16:43
- * Description:
+ * Description: 注解式实现springtask
  */
 @Service
 public class AutoSpringTask {
