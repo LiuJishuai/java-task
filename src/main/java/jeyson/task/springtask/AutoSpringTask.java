@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Service
 public class AutoSpringTask {
-    @Scheduled(cron = "* * 18 * * ?")
+    @Scheduled(cron = "* * 9 * * ?")
     public void job(){
         System.out.println("注解式定时任务："+new Date());
     }

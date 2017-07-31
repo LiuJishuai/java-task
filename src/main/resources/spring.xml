@@ -15,6 +15,6 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	<!-- 定时任务xml配置-->
 	<bean id="task" class="jeyson.task.springtask.SpringTask"></bean>
    <task:scheduled-tasks>
-	   <task:scheduled ref="task" method="job" cron="* * 18 * * ?"/>
+	   <task:scheduled ref="task" method="job" cron="* * 9 * * ?"/>
    </task:scheduled-tasks>
 </beans>
