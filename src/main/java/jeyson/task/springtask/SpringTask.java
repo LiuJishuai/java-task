@@ -1,8 +1,7 @@
 package jeyson.task.springtask;
+import jeyson.utils.DateUtil;
+import java.time.LocalDateTime;
 
-import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 /**
  * Created by  liujishuai
@@ -11,6 +10,6 @@ import java.util.Date;
  */
 public class SpringTask {
     public void job(){
-        System.out.println("xml配置定时任务：当前时间："+new Date());
+        System.out.println("xml配置定时任务：当前时间："+ DateUtil.getFormatTime(LocalDateTime.now(),DateUtil.standFomtter));
     }
 }

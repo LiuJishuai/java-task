@@ -1,5 +1,6 @@
 package jeyson.task.quartz.simple;
 
+import jeyson.utils.DateUtil;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 
@@ -15,7 +16,6 @@ import java.util.Date;
 public class HelloQuartzTest {
 
     public static  void main(String []args) throws SchedulerException {
-        DateTimeFormatter standFomtter=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");//jdk1.8的DateTimeFormatter
         //创建Scheduler工厂
         SchedulerFactory sf= new StdSchedulerFactory();
         //从工厂中获取调度器
@@ -39,6 +39,6 @@ public class HelloQuartzTest {
         scheduler.scheduleJob(jobDetail,trigger);
         //启动调度器
         scheduler.start();
-        System.out.println("开始："+ standFomtter.format(LocalDateTime.now()));
+        System.out.println("开始："+ DateUtil.getFormatTime(LocalDateTime.now(),DateUtil.standFomtter));
     }
 }
