@@ -54,5 +54,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 		</property>
 	</bean>
 	<!-- spring quartz RAM end-->
-
+    <!-- quartz manager start-->
+	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" />
+	<!-- quartz manager end-->
 </beans>
