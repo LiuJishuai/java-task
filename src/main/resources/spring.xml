@@ -17,4 +17,42 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
    <task:scheduled-tasks>
 	   <task:scheduled ref="task" method="job" cron="* * 9 * * ?"/>
    </task:scheduled-tasks>
+
+	<!-- spring quartz RAM start-->
+    <!-- 1 定义任务bean-->
+	<bean id="myRAMJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<!--定义任务名称 -->
+		<property name="name" value="myRAMJob"/>
+		<!-- 定义任务分组-->
+		<property name="group" value="myRAMGroup"/>
+		<!--指定具体任务的类-->
+		<property name="jobClass" value="jeyson.task.quartz.spring.RAM.RAMHelloJob"/>
+		<!--当没有活动的触发器与之关联时会在调度器中是否会删除该任务 false会删除-->
+		<property name="durability" value="true"/>
+		<!-- 指定spring容器的key，如果不设定在job中的jobmap中是获取不到spring容器的 -->
+		<property name="applicationContextJobDataKey" value="applicationContext"/>
+	</bean>
+
+   <!--2 定义触发器cron,一个触发器只能绑定一个任务-->
+	 <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		 <!--定义触发器名称-->
+       <property name="name" value="myRAMTrigger"/>
+		 <!-- 定义触发器分组-->
+		 <property name="group" value="myRAMTriggerGroup"/>
+		 <!--指定绑定的任务-->
+		 <property name="jobDetail" ref="myRAMJob"/>
+		 <!-- 指定Cron 的表达式 -->
+		 <property name="cronExpression" value="0,5 * 15 * * ?"/>
+	 </bean>
+
+	<!--定义调度器，将触发器注册在这里-->
+	<bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger"/>
+			</list>
+		</property>
+	</bean>
+	<!-- spring quartz RAM end-->
+
 </beans>

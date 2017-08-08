@@ -15,6 +15,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.13.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:3.2.13.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.13.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:3.2.13.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.7.4" />
